@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			//实例化日期
+			var myDate = new Date();
+			//年
+			var Year = myDate.getFullYear();
+			//月
+			var Month = myDate.getMonth() + 1;
+			//变成两位
+			Month = Month < 10 ? '0' + Month : Month;
+			//日
+			var Day = myDate.getDate();
+			//变成两位
+			Day = Day < 10 ? '0' + Day : Day;
+			
+			document.write(Year + "-" + Month +"-" +Day);
+		</script>
+	</body>
+</html>

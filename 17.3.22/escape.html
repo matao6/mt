@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var myStr = "<ksdfjk>skdjfj\" fskdf fsdf&dff";
+			console.log(myStr);
+//			document.write(escapeHtml(myStr));
+			document.write("myStr--"+myStr+"<br/>"+"escapeHtml(myStr)--"+escapeHtml(myStr));
+			
+			function escapeHtml(str) {
+				return str.replace(/[<>"&]/g, function(match) {
+					console.log(1);
+					switch(match) {
+						case "<":
+							return "&lt;";
+						case ">":
+							return "&gt;";
+						case "\"":
+							return "&quot;";
+						case "&":
+							return "&amp;";
+					}
+				})
+			};
+		</script>
+	</body>
+</html>

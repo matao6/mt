@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var taoUrl = "item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+			function serilizeUrl(url) {
+				var urlObj = {};
+				
+				if(/\?/.test(url)) {
+					var urlStr = url.substring(url.indexOf("?")+1);
+					var urlArr = urlStr.split("&");
+//					console.log(urlArr);
+					for(var j=0; j<urlArr.length; j++) {
+						var item = urlArr[j];
+//						console.log(item);
+						item = item.split("=");
+						console.log(item);
+						urlObj[item[0]] = item[1];
+					}
+					return urlObj;
+				}
+				return null;
+			};
+			
+			console.log(serilizeUrl(taoUrl));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		30.	将字符串”<tr><td>{$id}</td><td>{$name}</td></tr>”中的{$id}替换成10，{$name}替换成Tony （使用正则表达式）
+		<script type="text/javascript">
+			console.log("<tr><td>{$id}</td><td>{$name}</td></tr>".replace(/{\$id}/g, "10").replace(/{\$name}/g, "Tony"));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+//			34.	用js实现随机选取10–100之间的10个数字，存入一个数组，并排序。
+			function randomNum(newArr, min, max, len) {
+//				判断选取的个数是否大于最大值与最小值之差
+				if(len >= max - min) {
+					return "超过"+min+"-"+max+"之间的个数范围: "+(max-min-1)+"个总数";
+				}
+//				判断选取个数
+				if(newArr.length >= len) {
+					newArr.sort(function(a, b) {
+						return a-b;
+					})
+					return newArr;
+				}
+//				获取随机数
+				var newNum = parseInt(Math.random()*(max-min-1))+(min+1);
+				
+				for(var j=0; j<newArr.length; j++) {
+					if(newNum == newArr[j]) {
+						randomNum(newArr, min, max, len);
+						return;
+					}
+				}
+				
+				newArr.push(newNum);
+				
+				randomNum(newArr, min, max, len);
+				
+				return newArr;
+				
+			};
+			
+			var arr=[];
+			document.write(randomNum(arr,10,100,10));
+
+			
+		</script>
+	</body>
+</html>
